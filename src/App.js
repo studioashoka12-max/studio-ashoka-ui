@@ -143,8 +143,7 @@ function ServiceList({ title, items }) {
   return (
     <div className="service-list">
       <p className="service-label">
-        {title}
-        <span aria-hidden="true" className="chevron" />
+        <span>{title}</span>
       </p>
       <ul>
         {items.map((item) => (
@@ -210,6 +209,17 @@ function ContactIcon({ type }) {
     </svg>
   );
 }
+const enquiryWhatsApp = `https://wa.me/919834191441?text=${encodeURIComponent([
+  'Hello Studio Ashoka! I would like to enquire about your design services.',
+  '',
+  'Name: ',
+  'Service required: ',
+  'Project location: ',
+  'Project details: ',
+  '',
+  'Please let me know how we can discuss my project. Thank you!',
+].join('\n'))}`;
+
 const enquiryEmail = `mailto:studioashoka12@gmail.com?subject=${encodeURIComponent('Project Enquiry — Studio Ashoka')}&body=${encodeURIComponent([
   'Hello Studio Ashoka,',
   '',
@@ -417,7 +427,7 @@ function App() {
             <ContactIcon type="email" />
             <span>studioashoka12@gmail.com</span>
           </a>
-          <a href="https://wa.me/919834191441" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp: 9834191441 (opens in a new tab)">
+          <a href={enquiryWhatsApp} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp: 9834191441 (opens in a new tab)">
             <ContactIcon type="whatsapp" />
             <span>9834191441</span>
           </a>

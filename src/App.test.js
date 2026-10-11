@@ -19,7 +19,11 @@ test('offers working email and WhatsApp contact links', () => {
   expect(email.searchParams.get('subject')).toBe('Project Enquiry — Studio Ashoka');
   expect(email.searchParams.get('body')).toContain('Hello Studio Ashoka,\r\n\r\n');
   expect(email.searchParams.get('body')).toContain('Project details: ');
-  expect(screen.getByRole('link', { name: /Chat on WhatsApp: 9834191441/ })).toHaveAttribute('href', 'https://wa.me/919834191441');
+  const whatsapp = new URL(screen.getByRole('link', { name: /Chat on WhatsApp: 9834191441/ }).getAttribute('href'));
+  expect(whatsapp.origin + whatsapp.pathname).toBe('https://wa.me/919834191441');
+  expect(whatsapp.searchParams.get('text')).toContain('Hello Studio Ashoka!');
+  expect(whatsapp.searchParams.get('text')).toContain('\n\nName: \n');
+  expect(whatsapp.searchParams.get('text')).toContain('Project details: ');
 });
 
 test('prioritizes the hero and serves responsive, dimensioned images', () => {
