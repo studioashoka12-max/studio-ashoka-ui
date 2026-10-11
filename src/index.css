@@ -1,13 +1,8 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@font-face{font-family:'Mon Cheri';src:url('https://font-public.canva.com/YAEblJCYpYI/0/TAN_-_MON_CHERI.7a05ca580c2ece97120d98b3.5bc9e85cfa93a315f4037c081134e96f.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Martel Sans';src:url('https://font-public.canva.com/YAFdJnFZE_o/0/MartelSans-ExtraLight.b24ca7a2f95d6af1bc.04c8482340dceea475dcbc8245bdce60.woff2') format('woff2');font-style:normal;font-weight:200;font-display:swap}
+@font-face{font-family:'Martel Sans';src:url('https://font-public.canva.com/YAFdJnFZE_o/0/MartelSans-Regular.c2d2a373eb31b6ea5cbad.21743ebf3ad977bd919c23ddd87b9a3c.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+:root{--paper:#dbdbdb;--light:#ececec;--ink:#252629;--taupe:#635b4f;--charcoal:#312d2a;--display:'Mon Cheri','Times New Roman',serif;--body:'Martel Sans',Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:200;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}::selection{background:#635b4f;color:#fff}a{color:inherit}a:focus-visible{outline:2px solid currentColor;outline-offset:7px}img{max-width:100%;display:block}h1,h2,h3,p,figure{margin:0}h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase}a{text-decoration:none}button,a{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
