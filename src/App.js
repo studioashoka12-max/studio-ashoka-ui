@@ -1,5 +1,6 @@
 import { logo, hero, bedroom, kitchen, landscapeLawn, landscapePlan, landscapeView, landscapePath, drawing, cafe, floralCafe, livingOne, livingTwo, livingRoom } from "./assets/optimized/images";
 import "./App.css";
+import { useEffect, useRef } from "react";
 
 const services = [
   {
@@ -241,6 +242,38 @@ const enquiryEmail = `mailto:studioashoka12@gmail.com?subject=${encodeURICompone
 ].join('\r\n'))}`;
 
 function App() {
+  const mainRef = useRef(null);
+
+  useEffect(() => {
+    if (!window.IntersectionObserver || !window.matchMedia) return;
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const elements = mainRef.current.querySelectorAll(
+      '.about-heading, .about-copy, .service-content, .projects-banner, .projects-intro, .project-grid figure, .testimonials h3, .testimonial'
+    );
+    let observer;
+    const updateMotion = () => {
+      observer?.disconnect();
+      elements.forEach(element => element.classList.remove('scroll-reveal'));
+      if (motionPreference.matches) return;
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('scroll-reveal');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      elements.forEach(element => observer.observe(element));
+    };
+    updateMotion();
+    motionPreference.addEventListener('change', updateMotion);
+    return () => {
+      observer?.disconnect();
+      motionPreference.removeEventListener('change', updateMotion);
+      elements.forEach(element => element.classList.remove('scroll-reveal'));
+    };
+  }, []);
+
   return (
     <>
       <a className="skip-link" href="#main">
@@ -267,7 +300,7 @@ function App() {
           </h1>
         </div>
       </header>
-      <main id="main">
+      <main id="main" ref={mainRef}>
         <section className="about" aria-labelledby="about-title">
           <div className="about-heading">
             <h2 id="about-title">
