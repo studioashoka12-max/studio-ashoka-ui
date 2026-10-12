@@ -248,7 +248,7 @@ function App() {
     if (!window.IntersectionObserver || !window.matchMedia) return;
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const elements = mainRef.current.querySelectorAll(
-      '.about-heading, .about-copy, .service-content, .projects-banner, .projects-intro, .project-grid figure, .testimonials h3, .testimonial'
+      '.about-heading, .about-copy, .service-section h3, .service-content, .projects-banner, .projects-intro, .project-grid figure, .testimonials h3, .testimonial'
     );
     let observer;
     const updateMotion = () => {
