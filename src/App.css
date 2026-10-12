@@ -233,14 +233,6 @@
   text-transform: uppercase;
   font-weight: 400;
 }
-.long-quote {
-  padding: 1vw;
-  justify-content: flex-start;
-}
-.long-quote blockquote {
-  font-size: 1.08vw;
-  line-height: 1.5;
-}
 .contact {
   background: var(--taupe);
   color: var(--light);
@@ -417,13 +409,11 @@
     --bs-gutter-x: 0;
     row-gap: 22px;
   }
-  .testimonial,
-  .long-quote {
+  .testimonial {
     padding: 24px;
     min-height: 0;
   }
-  .testimonial blockquote,
-  .long-quote blockquote {
+  .testimonial blockquote {
     font-size: 15px;
     line-height: 1.65;
     margin-bottom: 16px;

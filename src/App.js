@@ -476,11 +476,9 @@ function App() {
             clients say
           </h3>
           <div className="row testimonial-row">
-            {testimonials.map((quote, index) => (
+            {testimonials.map((quote) => (
               <div className="col-md-4" key={quote.name}>
-                <figure
-                  className={`testimonial ${index === 0 ? "long-quote" : ""}`}
-                >
+                <figure className="testimonial">
                   <blockquote>{quote.text}</blockquote>
                   <figcaption>— {quote.name}</figcaption>
                 </figure>

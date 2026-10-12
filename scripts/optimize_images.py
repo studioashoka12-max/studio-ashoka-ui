@@ -8,7 +8,7 @@ out = assets / 'optimized'
 out.mkdir(exist_ok=True)
 sources = {
  'logo': 'L.png', 'hero': 'KIDS BED 4.jpg', 'bedroom': 'MR(3).jpg',
- 'kitchen': 'KITCHEN_8 - Photo(1).jpg', 'landscapeLawn': 'op2_24 - Photo.jpg',
+ 'kitchen': 'KITCHEN_8 - Photo.jpg', 'landscapeLawn': 'op2_24 - Photo.jpg',
  'landscapePlan': 'op2_5 - Photo-1.jpg', 'landscapeView': 'op2_8 - Photo.jpg',
  'landscapePath': 'op2_9 - Photo.jpg', 'drawing': 'IMG_1424.jpg',
  'cafe': 'IMG-20250519-WA0017.jpg', 'floralCafe': 'IMG-20250519-WA0037.jpg',

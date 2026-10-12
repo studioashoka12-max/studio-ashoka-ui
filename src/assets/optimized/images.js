@@ -68,7 +68,7 @@ import livingRoom2400 from "./livingRoom-2400.webp";
 export const logo = { src: logo640, srcSet: `${logo160} 160w, ${logo320} 320w, ${logo640} 640w`, width: 1434, height: 1494 };
 export const hero = { src: hero800, srcSet: `${hero480} 480w, ${hero800} 800w, ${hero1200} 1200w, ${hero1600} 1600w, ${hero2400} 2400w`, width: 5799, height: 3750 };
 export const bedroom = { src: bedroom800, srcSet: `${bedroom480} 480w, ${bedroom800} 800w, ${bedroom1200} 1200w, ${bedroom1600} 1600w, ${bedroom2400} 2400w`, width: 6666, height: 3750 };
-export const kitchen = { src: kitchen800, srcSet: `${kitchen480} 480w, ${kitchen800} 800w, ${kitchen1200} 1200w, ${kitchen1600} 1600w, ${kitchen2400} 2400w`, width: 5474, height: 3746 };
+export const kitchen = { src: kitchen800, srcSet: `${kitchen480} 480w, ${kitchen800} 800w, ${kitchen1200} 1200w, ${kitchen1600} 1600w, ${kitchen2400} 2400w`, width: 5475, height: 3747 };
 export const landscapeLawn = { src: landscapeLawn800, srcSet: `${landscapeLawn480} 480w, ${landscapeLawn800} 800w, ${landscapeLawn1200} 1200w, ${landscapeLawn1600} 1600w, ${landscapeLawn2400} 2400w`, width: 7680, height: 4320 };
 export const landscapePlan = { src: landscapePlan800, srcSet: `${landscapePlan480} 480w, ${landscapePlan800} 800w, ${landscapePlan1200} 1200w, ${landscapePlan1600} 1600w, ${landscapePlan2400} 2400w`, width: 7680, height: 4320 };
 export const landscapeView = { src: landscapeView800, srcSet: `${landscapeView480} 480w, ${landscapeView800} 800w, ${landscapeView1200} 1200w, ${landscapeView1600} 1600w, ${landscapeView2400} 2400w`, width: 7680, height: 4320 };
