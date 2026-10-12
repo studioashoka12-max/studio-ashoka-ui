@@ -1,4 +1,19 @@
-import { logo, hero, bedroom, kitchen, landscapeLawn, landscapePlan, landscapeView, landscapePath, drawing, cafe, floralCafe, livingOne, livingTwo, livingRoom } from "./assets/optimized/images";
+import {
+  logo,
+  hero,
+  bedroom,
+  kitchen,
+  landscapeLawn,
+  landscapePlan,
+  landscapeView,
+  landscapePath,
+  drawing,
+  cafe,
+  floralCafe,
+  livingOne,
+  livingTwo,
+  livingRoom,
+} from "./assets/optimized/images";
 import "./App.css";
 import { useEffect, useRef } from "react";
 
@@ -135,9 +150,26 @@ const testimonials = [
   },
 ];
 
-function ResponsiveImage({ image, alt, sizes = "(max-width: 767px) 86vw, 43vw", loading = "lazy", ...props }) {
-  return <img src={image.src} srcSet={image.srcSet} sizes={sizes} alt={alt}
-    width={image.width} height={image.height} loading={loading} decoding="async" {...props} />;
+function ResponsiveImage({
+  image,
+  alt,
+  sizes = "(max-width: 767px) 86vw, 43vw",
+  loading = "lazy",
+  ...props
+}) {
+  return (
+    <img
+      src={image.src}
+      srcSet={image.srcSet}
+      sizes={sizes}
+      alt={alt}
+      width={image.width}
+      height={image.height}
+      loading={loading}
+      decoding="async"
+      {...props}
+    />
+  );
 }
 
 function ServiceList({ title, items }) {
@@ -210,67 +242,78 @@ function ContactIcon({ type }) {
     </svg>
   );
 }
-const enquiryWhatsApp = `https://wa.me/919834191441?text=${encodeURIComponent([
-  'Hello Studio Ashoka! I would like to enquire about your design services.',
-  '',
-  'Name: ',
-  'Service required: ',
-  'Project location: ',
-  'Project details: ',
-  '',
-  'Please let me know how we can discuss my project. Thank you!',
-].join('\n'))}`;
+const enquiryWhatsApp = `https://wa.me/919834191441?text=${encodeURIComponent(
+  [
+    "Hello Studio Ashoka! I would like to enquire about your design services.",
+    "",
+    "Name: ",
+    "Service required: ",
+    "Project location: ",
+    "Project details: ",
+    "",
+    "Please let me know how we can discuss my project. Thank you!",
+  ].join("\n")
+)}`;
 
-const enquiryEmail = `mailto:studioashoka12@gmail.com?subject=${encodeURIComponent('Project Enquiry — Studio Ashoka')}&body=${encodeURIComponent([
-  'Hello Studio Ashoka,',
-  '',
-  'I would like to enquire about your design services for my project.',
-  '',
-  'Name: ',
-  'Phone number: ',
-  'Service required: ',
-  'Project location: ',
-  'Approximate area: ',
-  'Budget: ',
-  'Expected timeline: ',
-  '',
-  'Project details: ',
-  '',
-  'Please let me know the next steps to discuss my requirements.',
-  '',
-  'Thank you!',
-].join('\r\n'))}`;
+const enquiryEmail = `mailto:studioashoka12@gmail.com?subject=${encodeURIComponent(
+  "Project Enquiry — Studio Ashoka"
+)}&body=${encodeURIComponent(
+  [
+    "Hello Studio Ashoka,",
+    "",
+    "I would like to enquire about your design services for my project.",
+    "",
+    "Name: ",
+    "Phone number: ",
+    "Service required: ",
+    "Project location: ",
+    "Approximate area: ",
+    "Budget: ",
+    "Expected timeline: ",
+    "",
+    "Project details: ",
+    "",
+    "Please let me know the next steps to discuss my requirements.",
+    "",
+    "Thank you!",
+  ].join("\r\n")
+)}`;
 
 function App() {
   const mainRef = useRef(null);
 
   useEffect(() => {
     if (!window.IntersectionObserver || !window.matchMedia) return;
-    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const motionPreference = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
     const elements = mainRef.current.querySelectorAll(
-      '.about-heading, .about-copy, .service-section h3, .service-content, .projects-banner, .projects-intro, .project-grid figure, .testimonials h3, .testimonial'
+      ".about-heading, .about-copy, .service-section h3, .service-content, .projects-banner, .projects-intro, .project-grid figure, .testimonials h3, .testimonial"
     );
     let observer;
     const updateMotion = () => {
       observer?.disconnect();
-      elements.forEach(element => element.classList.remove('scroll-reveal'));
+      elements.forEach((element) => element.classList.remove("scroll-reveal"));
       if (motionPreference.matches) return;
-      observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('scroll-reveal');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08 });
-      elements.forEach(element => observer.observe(element));
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("scroll-reveal");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08 }
+      );
+      elements.forEach((element) => observer.observe(element));
     };
     updateMotion();
-    motionPreference.addEventListener('change', updateMotion);
+    motionPreference.addEventListener("change", updateMotion);
     return () => {
       observer?.disconnect();
-      motionPreference.removeEventListener('change', updateMotion);
-      elements.forEach(element => element.classList.remove('scroll-reveal'));
+      motionPreference.removeEventListener("change", updateMotion);
+      elements.forEach((element) => element.classList.remove("scroll-reveal"));
     };
   }, []);
 
@@ -279,11 +322,15 @@ function App() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <header
-        className="hero"
-
-      >
-        <ResponsiveImage image={hero} alt="" className="section-backdrop" sizes="(max-width: 767px) 1400px, 100vw" loading="eager" fetchPriority="high" />
+      <header className="hero">
+        <ResponsiveImage
+          image={hero}
+          alt=""
+          className="section-backdrop"
+          sizes="(max-width: 767px) 1400px, 100vw"
+          loading="eager"
+          fetchPriority="high"
+        />
         <nav
           className="hero-nav d-flex justify-content-between"
           aria-label="Services"
@@ -293,7 +340,13 @@ function App() {
           <a href="#visualization">3D visualization</a>
         </nav>
         <div className="brand d-flex align-items-center">
-          <ResponsiveImage image={logo} alt="Studio Ashoka emblem" className="brand-logo" sizes="(max-width: 767px) 100px, 23vw" loading="eager" />
+          <ResponsiveImage
+            image={logo}
+            alt="Studio Ashoka emblem"
+            className="brand-logo"
+            sizes="(max-width: 767px) 100px, 23vw"
+            loading="eager"
+          />
           <h1>
             <span>Studio</span>
             <span>Ashoka</span>
@@ -389,11 +442,13 @@ function App() {
           id="projects"
           aria-labelledby="projects-title"
         >
-          <div
-            className="projects-banner d-flex flex-column align-items-center justify-content-center text-center"
-
-          >
-            <ResponsiveImage image={landscapePath} alt="" className="section-backdrop" sizes="100vw" />
+          <div className="projects-banner d-flex flex-column align-items-center justify-content-center text-center">
+            <ResponsiveImage
+              image={landscapePath}
+              alt=""
+              className="section-backdrop"
+              sizes="100vw"
+            />
             <h2 id="projects-title">Projects</h2>
             <p>Ideas, drawn into existence</p>
           </div>
@@ -436,7 +491,12 @@ function App() {
       </main>
       <footer id="contact" className="contact">
         <div className="contact-image">
-          <ResponsiveImage image={livingRoom} alt="Contemporary living room designed by Studio Ashoka" className="section-backdrop" sizes="100vw" />
+          <ResponsiveImage
+            image={livingRoom}
+            alt="Contemporary living room designed by Studio Ashoka"
+            className="section-backdrop"
+            sizes="100vw"
+          />
         </div>
         <h2 className="text-center">Find us on</h2>
         <address className="contact-links">
@@ -460,7 +520,12 @@ function App() {
             <ContactIcon type="email" />
             <span>studioashoka12@gmail.com</span>
           </a>
-          <a href={enquiryWhatsApp} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp: 9834191441 (opens in a new tab)">
+          <a
+            href={enquiryWhatsApp}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp: 9834191441 (opens in a new tab)"
+          >
             <ContactIcon type="whatsapp" />
             <span>9834191441</span>
           </a>
