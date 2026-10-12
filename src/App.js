@@ -179,8 +179,8 @@ function ServiceList({ title, items }) {
         <span>{title}</span>
       </p>
       <ul>
-        {items.map((item) => (
-          <li key={item}>{item}</li>
+        {items.map((item, index) => (
+          <li key={item} style={{ "--reveal-delay": `${index * 70}ms` }}>{item}</li>
         ))}
       </ul>
     </div>
@@ -288,7 +288,7 @@ function App() {
       "(prefers-reduced-motion: reduce)"
     );
     const elements = mainRef.current.querySelectorAll(
-      ".about-heading, .about-copy, .service-section h3, .service-content, .projects-banner, .projects-intro, .project-grid figure, .testimonials h3, .testimonial"
+      ".about-heading, .about-copy, .service-section h3, .service-image, .service-list, .projects-banner, .projects-intro, .project-grid img, .project-grid figcaption, .testimonials h3, .testimonial"
     );
     let observer;
     const updateMotion = () => {
